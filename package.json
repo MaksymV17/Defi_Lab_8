@@ -1,0 +1,21 @@
+{
+  "name": "vertii-ccip",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Міжмережеве повідомлення Sepolia -> Arbitrum Sepolia через Chainlink CCIP (Вертій Максим Олександрович)",
+  "scripts": {
+    "build": "hardhat compile",
+    "deploy:receiver": "hardhat run scripts/deployReceiver.js --network arbitrumSepolia",
+    "deploy:messenger": "hardhat run scripts/deployMessenger.js --network sepolia",
+    "fund": "hardhat run scripts/fundMessenger.js --network sepolia",
+    "send": "hardhat run scripts/sendMessage.js --network sepolia",
+    "check": "hardhat run scripts/checkReceiver.js --network arbitrumSepolia"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^3.0.8",
+    "@openzeppelin/contracts": "^5.0.2",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.0",
+    "hardhat": "^2.22.0"
+  }
+}
